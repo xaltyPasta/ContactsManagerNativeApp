@@ -19,21 +19,22 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 const App: React.FC = () => {
   return (
     <Provider store={store}>
+      {/* <PersistGate loading={null} persistor={persistor}></PersistGate> */}
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen 
-            name="ContactList" 
-            component={ContactList} 
+          <Stack.Screen
+            name="ContactList"
+            component={ContactList}
             options={{ title: 'Contacts' }}
           />
-          <Stack.Screen 
-            name="ContactDetail" 
-            component={ContactDetail} 
+          <Stack.Screen
+            name="ContactDetail"
+            component={ContactDetail}
             options={{ title: 'Contact Details' }}
           />
-          <Stack.Screen 
-            name="AddEditContact" 
-            component={AddEditContact} 
+          <Stack.Screen
+            name="AddEditContact"
+            component={AddEditContact}
             options={({ route }) => ({
               title: route.params?.contact ? 'Edit Contact' : 'Add Contact',
             })}
